@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body{
+				position: relative;
+				text-align: center;
+				top:200px;
+				
+			}
+			
+		</style>
+		<script>
+		//validating the email
+		function validateEmail(){
+			var emailTextBox= document.getElementById("txtEmail");
+			var email=emailTextBox.value;
+			var emailRegEx=/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+			
+				emailTextBox.style.colr ="white";
+		}
+			if(emailRegEx.test(email)){
+				emailTextBox.style.background="green";
+				
+			}
+		else{
+		emailTextBox.style.background="red";
+			alert('email id incorrect');
+		}
+		</script>
+	</head>
+	<body>
+		
+	 <!--login form context-->
+		<input type="text" id="txtEmail"  onkeyup="validateEmail()" value="email id"/> <br>
+		<input type="text" name="password" value="password">
+		<br>
+		<input type="button"  value="login" onclick="window.open('page.html')"/><br
+	</body>
+</html>
